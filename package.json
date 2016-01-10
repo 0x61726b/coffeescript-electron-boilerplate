@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "asar": "^0.9.0",
+    "electron-compilers": "^2.0.4",
+    "electron-prebuilt": "^0.36.3",
+    "fs-jetpack": "^0.7.1",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-util": "^3.0.6",
+    "q": "^1.4.1",
+    "rcedit": "^0.3.0",
+    "rollup": "^0.21.0",
+    "tree-kill": "^0.1.1",
+    "yargs": "^3.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd app && npm install",
+    "build": "gulp build",
+    "release": "gulp release --env=production",
+    "start": "node ./tasks/start"
+  },
+  "optionalDependencies": {
+    "appdmg": "^0.3.2",
+    "rcedit": "^0.3.0"
+  },
+  "dependencies": {
+    "electron-compile": "^2.0.5"
+  }
+}

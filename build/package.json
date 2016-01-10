@@ -1,0 +1,17 @@
+{
+  "name": "chiika-electron-dev",
+  "productName": "Chiika Dev",
+  "identifier": "com.arken.chiika-electron",
+  "description": "Chiika,MyAnimeList client.",
+  "version": "0.1.0",
+  "author": "arkenthera,julesawdupin",
+  "copyright": "© 2016",
+  "main": "background.js",
+  "dependencies": {
+    "fs-jetpack": "^0.7.0"
+  },
+  "env": {
+    "name": "development",
+    "description": "Add here any environment specific stuff you like."
+  }
+}
