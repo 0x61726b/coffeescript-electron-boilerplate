@@ -20,7 +20,6 @@ Init = () ->
 
     Q()
 
-    console.log "Init"
 
 CopyRuntime = () ->
   projectDir.copyAsync('node_modules/electron-prebuilt/dist', readyAppDir.path(), { overwrite: true })
@@ -83,7 +82,7 @@ CreateInstaller = () ->
         setupIcon: projectDir.path('resources/windows/setup-icon.ico'),
         banner: projectDir.path('resources/windows/setup-banner.bmp'),
   })
-  
+
   tmpDir.write('installer.nsi',installScript)
 
   gulpUtil.log('Building...')
@@ -112,11 +111,11 @@ CleanClutter = () ->
   tmpDir.removeAsync('.')
 
 module.exports = () ->
-  Init()
-  CopyRuntime()
-  CleanupRuntime()
-  PackageBuiltApp()
-  Finalize()
-  RenameApp()
-  CreateInstaller()
-  CleanClutter()
+  Init().then( () ->
+    CopyRuntime().then( () ->
+      CleanupRuntime().then( () ->
+        PackageBuiltApp().then( () ->
+          Finalize().then( () ->
+            RenameApp().then( () ->
+              CreateInstaller().then( () ->
+                CleanClutter())))))))

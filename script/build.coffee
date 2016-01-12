@@ -78,11 +78,16 @@ gulp.task 'watch', () ->
 
 #Coffee
 gulp.task 'compile', () ->
+  deferred = Q.defer()
   coffee = require 'gulp-coffee'
 
   gulp.src( './app/scripts/*.coffee')
       .pipe(coffee())
       .pipe(gulp.dest(destDir.path()))
+
+  deferred.resolve()
+
+  deferred.promise
 
 
 #Finalize
@@ -95,4 +100,4 @@ gulp.task 'finalize', ['clean'], () ->
 
   destDir.write('package.json',manifest)
 
-gulp.task('build',['bundle','compile','less','copy','finalize'])
+gulp.task('build',['compile','less','copy','finalize'])

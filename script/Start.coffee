@@ -44,8 +44,8 @@ RunApp = () ->
       process.exit()
       )
 
-gulp.task 'run',() ->
-  RunBuild().done( () ->
+module.exports = () ->
+  RunBuild().then( () ->
     RunGulpWatch()
     RunApp()
     )
