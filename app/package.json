@@ -1,0 +1,13 @@
+{
+  "name": "chiika-electron",
+  "productName": "Chiika",
+  "identifier": "com.arken.chiika-electron",
+  "description": "Chiika,MyAnimeList client.",
+  "version": "0.1.0",
+  "author": "arkenthera,julesawdupin",
+  "copyright": "© 2016",
+  "main": "test.js",
+  "dependencies": {
+    "fs-jetpack": "^0.7.0"
+  }
+}
