@@ -45,6 +45,7 @@ RunApp = () ->
       )
 
 gulp.task 'run',() ->
-  RunBuild()
-  RunGulpWatch()
-  RunApp()
+  RunBuild().done( () ->
+    RunGulpWatch()
+    RunApp()
+    )
